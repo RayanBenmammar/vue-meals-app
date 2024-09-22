@@ -1,4 +1,6 @@
 <script setup>
+import MealItem from "./MealItem.vue";
+
 defineProps({
   meals: {
     type: Array,
@@ -8,14 +10,14 @@ defineProps({
 </script>
 
 <template>
-  <div>
-    <h2>Meals</h2>
-    <ul>
-      <li v-for="meal in meals" :key="meal.id">
-        <a :href="meal.url">{{ meal.strMeal }}</a>
-      </li>
-    </ul>
+  <div class="grid">
+    <MealItem v-for="meal in meals" :key="meal.id" :meal="meal" />
   </div>
+  <div v-if="!meals.length">There is no meal here</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+</style>
