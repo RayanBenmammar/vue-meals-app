@@ -37,4 +37,8 @@ const finalTags = computed(() => {
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
+img {
+  cursor: pointer;
+}
 </style>
