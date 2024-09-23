@@ -37,6 +37,7 @@ watch(
 
 <template>
   <div>
+    <h1>Search Meals by Name</h1>
     <input
       type="text"
       name="name"
