@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref } from "vue";
+import { useRouter } from "vue-router";
 import Tag from "./Tag.vue";
 const props = defineProps({
   meal: {
@@ -17,12 +18,17 @@ const finalTags = computed(() => {
   }
   return tmp;
 });
+const router = useRouter();
+
+const goToMeal = () => {
+  router.push(`/meal/${props.meal.idMeal}`);
+};
 </script>
 
 <template>
   <article>
     <header>{{ meal.strMeal }}</header>
-    <img :src="meal.strMealThumb" :alt="meal.strMeal" />
+    <img :src="meal.strMealThumb" :alt="meal.strMeal" @click="goToMeal" />
     <footer>
       <div class="footer-container">
         <Tag v-for="tag in finalTags" :key="tag" :name="tag" />

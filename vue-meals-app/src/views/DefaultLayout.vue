@@ -21,6 +21,6 @@
 
 <style scoped>
 .nav-container {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 </style>
