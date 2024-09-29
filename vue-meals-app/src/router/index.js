@@ -1,3 +1,4 @@
+import DefaultLayout from "@/views/DefaultLayout.vue";
 import Home from "@/views/Home.vue";
 import MealsByLetter from "@/views/MealsByLetter.vue";
 import MealsByName from "@/views/MealsByName.vue";
@@ -8,17 +9,24 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: Home,
-    },
-    {
-      path: "/by-name/:name?",
-      name: "meals-by-name",
-      component: MealsByName,
-    },
-    {
-      path: "/by-letter/:letter?",
-      component: MealsByLetter,
+      name: "default-layout",
+      component: DefaultLayout,
+      children: [
+        {
+          path: "/",
+          name: "home",
+          component: Home,
+        },
+        {
+          path: "/by-name/:name?",
+          name: "meals-by-name",
+          component: MealsByName,
+        },
+        {
+          path: "/by-letter/:letter?",
+          component: MealsByLetter,
+        },
+      ],
     },
   ],
 });

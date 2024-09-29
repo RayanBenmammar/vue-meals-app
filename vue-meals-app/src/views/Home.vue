@@ -18,10 +18,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="title-container">
     <h1>Random Meals</h1>
   </div>
-  <Meals :meals="meals" />
+  <div class="meals-container">
+    <Meals :meals="meals" />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.title-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.meals-container {
+  padding: 2rem;
+}
+</style>

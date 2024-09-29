@@ -36,7 +36,7 @@ watch(
 </script>
 
 <template>
-  <div>
+  <div class="title-container">
     <h1>Search Meals by Name</h1>
     <input
       type="text"
@@ -46,7 +46,18 @@ watch(
       v-model="name"
     />
   </div>
-  <Meals :meals="meals" />
+  <div class="meals-container">
+    <Meals :meals="meals" />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.title-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.meals-container {
+  padding: 2rem;
+}
+</style>

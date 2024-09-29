@@ -34,7 +34,7 @@ watch(
 </script>
 
 <template>
-  <div>
+  <div class="title-container">
     <h1>Meals by Letter</h1>
   </div>
   <div class="router-link">
@@ -42,13 +42,26 @@ watch(
       >{{ l }}
     </RouterLink>
   </div>
-
-  <Meals :meals="meals" />
+  <div class="meals-container">
+    <Meals :meals="meals" />
+  </div>
 </template>
 
 <style scoped>
 .router-link {
-  display: inline-flex;
+  display: flex;
   gap: 0.5rem;
+  justify-content: center;
+  flex-flow: wrap;
+  padding: 1rem;
+}
+
+.title-container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.meals-container {
+  padding: 2rem;
 }
 </style>
